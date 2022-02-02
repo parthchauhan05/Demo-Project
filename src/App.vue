@@ -1,12 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    </div> -->
+    <!-- <router-view /> -->
+    <el-container>
+      <el-header style="position: sticky; top: 0"
+        ><headerComponent
+      /></el-header>
+      <el-main>
+        <homeComponent />
+      </el-main>
+      <el-footer><footerComponent /></el-footer>
+    </el-container>
   </div>
 </template>
+
+<script>
+import headerComponent from "@/components/header.vue";
+import footerComponent from "@/components/footer.vue";
+import homeComponent from "@/components/home.vue";
+
+export default {
+  components: {
+    headerComponent,
+    footerComponent,
+    homeComponent,
+  },
+};
+</script>
 
 <style>
 #app {
